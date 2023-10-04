@@ -5,6 +5,7 @@ import exportToExcel from '../../firebase/otherFunctions/downloadExcel'
 import AllResults from "../AllResults/AllResults";
 import { Link } from "react-router-dom";
 import styles from "./Search.module.css";
+
 function Search() {
   const [searchCriteria, setSearchCriteria] = useState({
     year: "",
@@ -78,7 +79,50 @@ function Search() {
               className="form-control"
             />
           </div>
-          {/* ... Otros campos de entrada ... */}
+          <div className="me-2">
+            <label htmlFor="crime">Delito:</label>
+            <input
+              type="text"
+              id="crime"
+              name="crime"
+              value={searchCriteria.crime}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </div>
+          <div className="me-2">
+            <label htmlFor="boxNumber">Número de Caja:</label>
+            <input
+              type="number"
+              id="boxNumber"
+              name="boxNumber"
+              value={searchCriteria.boxNumber}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </div>
+          <div className="me-2">
+            <label htmlFor="title">Carátula:</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              value={searchCriteria.title}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </div>
+          <div>
+            <label htmlFor="fileNumber">Expediente:</label>
+            <input
+              type="number"
+              id="fileNumber"
+              name="fileNumber"
+              value={searchCriteria.fileNumber}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </div>
         </div>
         <button onClick={handleSearch} className="btn btn-primary mt-3">
           Buscar
